@@ -1,0 +1,13 @@
+@import url('./reset.css');
+
+body {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-image: url('/assets/background/bg-5.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
