@@ -33,8 +33,11 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/Card/page.jsx"
-, "src/app/(Home)/page.jsx", "src/app/(Home)/components/form-login.jsx"  ],
+    "src/app/Card/page.jsx",
+    "src/app/(Home)/page.jsx",
+    "src/app/Login/page.jsx",
+    "src/app/api/route.js"
+  ],
   "exclude": [
     "node_modules"
   ]

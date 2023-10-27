@@ -1,0 +1,10 @@
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 6.25rem 0 6.25rem;
+}
+
+.nav-container {
+  display: flex;
+}
