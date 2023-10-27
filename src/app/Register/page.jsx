@@ -1,18 +1,18 @@
 "use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 import FormContainer from "../../components/Form-Container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
 import { useForm } from "react-hook-form";
 import styles from "./styles/Register.module.css";
 export default function Register() {
-  
   const { register, handleSubmit, errors } = useForm();
   const [response, setResponse] = useState(null);
 
-  const onSubmit = async (data) => {
+  const handleSubmitForm = async (data) => {
     try {
+      console.log(data);
       const response = await fetch("/api", {
         method: "POST",
         headers: {
@@ -31,13 +31,13 @@ export default function Register() {
       console.error("Erro inesperado:", error);
     }
   };
-  
+
   return (
     <FormContainer height="500px">
       <div className={styles["form-box"]}>
         <h2 className={styles["input-title"]}>Registration</h2>
 
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(handleSubmitForm)}>
           <div className={styles["input-box"]}>
             <span className={styles.icon}>
               <FontAwesomeIcon icon={faUser} />

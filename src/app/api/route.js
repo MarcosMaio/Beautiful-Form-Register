@@ -4,15 +4,24 @@ import { NextResponse } from "next/server";
 
 const prisma = new PrismaClient();
 
+// export async function POST(request) {
+//   const body = await request.json()
+
+//   return NextResponse.json(body, {
+//     status: 200,
+//   });
+// }
 export async function POST(request) {
-  const { username, email, password } = request.data;
+  const { username, email, password } = await request.json();
   console.log("Dados recebidos:", { username, email, password });
 
-  const existingUser = await prisma.user.findUnique({
+  const existingUser = await prisma.user.findFirst({
     where: {
-      OR: [{ username }, { email }],
+      OR: [{ username: username }, { email: email }],
     },
   });
+
+  console.log(existingUser);
 
   if (existingUser) {
     return NextResponse.json(
@@ -25,7 +34,7 @@ export async function POST(request) {
 
     const hashedPassword = bcrypt.hashSync(password, salt);
 
-    const newUser = await prisma.user.create({
+    await prisma.user.create({
       data: {
         username,
         email,
