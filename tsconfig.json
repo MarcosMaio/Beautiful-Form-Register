@@ -36,7 +36,7 @@
     "src/app/Card/page.jsx",
     "src/app/(Home)/page.jsx",
     "src/app/Login/page.jsx",
-    "src/app/api/route.js"
+    "src/app/api/register-endpoint/route.js"
   ],
   "exclude": [
     "node_modules"
