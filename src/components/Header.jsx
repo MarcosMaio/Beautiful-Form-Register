@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import NavItens from "./Nav-Itens";
+import NavItens from "./nav-itens";
 import styles from "../styles/Header.module.css";
 
 export default function Header() {
