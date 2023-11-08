@@ -14,6 +14,8 @@ export default function LoginForm() {
   const { register, handleSubmit, errors } = useForm();
   const { message, setMessage, setMessageType, messageType } = useMessage();
   const [showResponseMessage, setShowResponseMessage] = useState(false);
+  const [hasValueOnEmail, setHasValueOnEmail] = useState("");
+  const [hasValueOnPassword, setHasValueOnPassword] = useState("");
 
   const handleSubmitForm = async (data) => {
     const url = "/api/login-endpoint";
@@ -55,6 +57,14 @@ export default function LoginForm() {
     }
   }, [message, messageType]);
 
+  const handleInputChangeEmail = (e) => {
+    setHasValueOnEmail(e.target.value);
+  };
+
+  const handleInputChangePassword = (e) => {
+    setHasValueOnPassword(e.target.value);
+  };
+
   return (
     <FormContainer>
       <div className={styles["form-box"]}>
@@ -72,8 +82,14 @@ export default function LoginForm() {
               {...register("email", {
                 required: "Required",
               })}
+              onChange={handleInputChangeEmail}
             />
-            <label htmlFor="email">Email</label>
+            <label
+              htmlFor="email"
+              style={{ top: hasValueOnEmail === "" ? "" : "-5px" }}
+            >
+              Email
+            </label>
           </div>
           <div className={styles["input-box"]}>
             <span className={styles.icon}>
@@ -87,8 +103,14 @@ export default function LoginForm() {
               {...register("password", {
                 required: "Required",
               })}
+              onChange={handleInputChangePassword}
             />
-            <label htmlFor="password">Password</label>
+            <label
+              htmlFor="password"
+              style={{ top: hasValueOnPassword === "" ? "" : "-5px" }}
+            >
+              Password
+            </label>
           </div>
           <div className={styles["remember-forgot"]}>
             <label>
