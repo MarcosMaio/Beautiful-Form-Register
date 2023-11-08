@@ -1,0 +1,12 @@
+.btn {
+  width: 100%;
+  height: 45px;
+  background: #202020;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #fff;
+  font-weight: 500;
+}
