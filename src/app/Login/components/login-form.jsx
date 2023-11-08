@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import sendDataToEndpoint from "../../api/api";
 import { useMessage } from "@/context/message-context";
 import { useEffect, useState } from "react";
+import Button from "@/components/button";
 
 export default function LoginForm() {
   const { register, handleSubmit, errors } = useForm();
@@ -121,9 +122,7 @@ export default function LoginForm() {
         {showResponseMessage ? (
           <MessageStatus type={messageType} />
         ) : (
-          <button type="submit" className={styles.btn}>
-            Login
-          </button>
+          <Button>Login</Button>
         )}
         <div className={styles["login-register"]}>
           <p>

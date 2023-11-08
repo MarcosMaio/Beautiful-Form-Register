@@ -6,6 +6,7 @@ import { faEnvelope, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
 import { useForm } from "react-hook-form";
 import styles from "./styles/Register.module.css";
 import sendDataToEndpoint from "../../api/api";
+import Button from "@/components/button";
 
 export default function RegisterForm() {
   const { register, handleSubmit, errors } = useForm();
@@ -73,9 +74,7 @@ export default function RegisterForm() {
             agree to the terms & conditions
           </label>
         </div>
-        <button type="submit" className={styles.btn}>
-          Register
-        </button>
+        <Button>Register</Button>
         <div className={styles["login-register"]}>
           <p>
             Already have an account?
