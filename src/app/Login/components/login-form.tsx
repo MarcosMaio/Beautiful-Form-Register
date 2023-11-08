@@ -11,14 +11,19 @@ import { useMessage } from "@/context/message-context";
 import { useEffect, useState } from "react";
 import Button from "@/components/button";
 
+interface FormData {
+  email: string;
+  password: string;
+}
+
 export default function LoginForm() {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit } = useForm<FormData>();
   const { message, setMessage, setMessageType, messageType } = useMessage();
   const [showResponseMessage, setShowResponseMessage] = useState(false);
   const [hasValueOnEmail, setHasValueOnEmail] = useState("");
   const [hasValueOnPassword, setHasValueOnPassword] = useState("");
 
-  const handleSubmitForm = async (data) => {
+  const handleSubmitForm = async (data: FormData) => {
     const url = "/api/login-endpoint";
     const responseData = await sendDataToEndpoint(url, data);
 
@@ -37,7 +42,7 @@ export default function LoginForm() {
     }
   };
 
-  const GetMessageType = (message, type) => {
+  const GetMessageType = (message: string, type: string) => {
     setMessage(message);
     setMessageType(type);
   };
@@ -58,11 +63,13 @@ export default function LoginForm() {
     }
   }, [message, messageType]);
 
-  const handleInputChangeEmail = (e) => {
+  const handleInputChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setHasValueOnEmail(e.target.value);
   };
 
-  const handleInputChangePassword = (e) => {
+  const handleInputChangePassword = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
     setHasValueOnPassword(e.target.value);
   };
 
@@ -75,7 +82,6 @@ export default function LoginForm() {
           </span>
           <input
             type="email"
-            name="email"
             required
             autoComplete="off"
             {...register("email", {
@@ -96,7 +102,6 @@ export default function LoginForm() {
           </span>
           <input
             type="password"
-            name="password"
             required
             autoComplete="off"
             {...register("password", {

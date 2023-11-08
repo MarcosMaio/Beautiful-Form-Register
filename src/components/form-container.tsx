@@ -1,8 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { ReactNode } from "react";
 import styles from "../styles/Form-Container.module.css";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-export default function FormContainer({ children, height, title }) {
+
+interface Props {
+  children: ReactNode;
+  height?: string;
+  title: string;
+}
+export default function FormContainer({ children, height, title }: Props) {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper} style={{ height }}>

@@ -8,10 +8,15 @@ import styles from "./styles/Register.module.css";
 import sendDataToEndpoint from "../../api/api";
 import Button from "@/components/button";
 
+interface FormData {
+  username: string;
+  email: string;
+  password: string;
+}
 export default function RegisterForm() {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit } = useForm<FormData>();
 
-  const handleSubmitForm = async (data) => {
+  const handleSubmitForm = async (data: FormData) => {
     const url = "/api/register-endpoint";
     const responseData = await sendDataToEndpoint(url, data);
 
@@ -30,7 +35,6 @@ export default function RegisterForm() {
           <input
             type="text"
             id="username"
-            name="username"
             autoComplete="off"
             {...register("username", {
               required: "Required",
@@ -45,7 +49,6 @@ export default function RegisterForm() {
           <input
             type="email"
             id="email"
-            name="email"
             autoComplete="off"
             {...register("email", {
               required: "Required",
@@ -60,7 +63,6 @@ export default function RegisterForm() {
           <input
             type="password"
             id="password"
-            name="password"
             autoComplete="off"
             {...register("password", {
               required: "Required",
