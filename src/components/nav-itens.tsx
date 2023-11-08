@@ -1,6 +1,13 @@
+import React, { ReactNode } from "react";
 import Link from "next/link";
 import styles from "../styles/Nav-Itens.module.css";
-const NavItens = ({ children, href }) => {
+
+interface Props {
+  children: ReactNode;
+  href: string;
+}
+
+const NavItens = ({ children, href }: Props) => {
   return (
     <li className={styles["nav-itens"]}>
       <Link className={styles.link} href={href}>
