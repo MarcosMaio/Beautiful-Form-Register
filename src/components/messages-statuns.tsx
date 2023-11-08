@@ -1,7 +1,10 @@
 import React from "react";
 import styles from "../styles/message-status.module.css";
 
-const MessageStatus = ({ type }) => {
+interface Props {
+  type: string;
+}
+const MessageStatus = ({ type }: Props) => {
   return (
     <div
       className={
