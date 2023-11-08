@@ -66,77 +66,74 @@ export default function LoginForm() {
   };
 
   return (
-    <FormContainer>
-      <div className={styles["form-box"]}>
-        <h2 className={styles["input-title"]}>Login</h2>
-        <form onSubmit={handleSubmit(handleSubmitForm)}>
-          <div className={styles["input-box"]}>
-            <span className={styles.icon}>
-              <FontAwesomeIcon icon={faEnvelope} />
-            </span>
-            <input
-              type="email"
-              name="email"
-              required
-              autoComplete="off"
-              {...register("email", {
-                required: "Required",
-              })}
-              onChange={handleInputChangeEmail}
-            />
-            <label
-              htmlFor="email"
-              style={{ top: hasValueOnEmail === "" ? "" : "-5px" }}
-            >
-              Email
-            </label>
-          </div>
-          <div className={styles["input-box"]}>
-            <span className={styles.icon}>
-              <FontAwesomeIcon icon={faLock} />
-            </span>
-            <input
-              type="password"
-              name="password"
-              required
-              autoComplete="off"
-              {...register("password", {
-                required: "Required",
-              })}
-              onChange={handleInputChangePassword}
-            />
-            <label
-              htmlFor="password"
-              style={{ top: hasValueOnPassword === "" ? "" : "-5px" }}
-            >
-              Password
-            </label>
-          </div>
-          <div className={styles["remember-forgot"]}>
-            <label>
-              <input type="checkbox" />
-              Remember me
-            </label>
-            <a href="#">Forgot Password?</a>
-          </div>
+    <FormContainer title={"Login"}>
+      <form onSubmit={handleSubmit(handleSubmitForm)}>
+        <div className={styles["input-box"]}>
+          <span className={styles.icon}>
+            <FontAwesomeIcon icon={faEnvelope} />
+          </span>
+          <input
+            type="email"
+            name="email"
+            required
+            autoComplete="off"
+            {...register("email", {
+              required: "Required",
+            })}
+            onChange={handleInputChangeEmail}
+          />
+          <label
+            htmlFor="email"
+            style={{ top: hasValueOnEmail === "" ? "" : "-5px" }}
+          >
+            Email
+          </label>
+        </div>
+        <div className={styles["input-box"]}>
+          <span className={styles.icon}>
+            <FontAwesomeIcon icon={faLock} />
+          </span>
+          <input
+            type="password"
+            name="password"
+            required
+            autoComplete="off"
+            {...register("password", {
+              required: "Required",
+            })}
+            onChange={handleInputChangePassword}
+          />
+          <label
+            htmlFor="password"
+            style={{ top: hasValueOnPassword === "" ? "" : "-5px" }}
+          >
+            Password
+          </label>
+        </div>
+        <div className={styles["remember-forgot"]}>
+          <label>
+            <input type="checkbox" />
+            Remember me
+          </label>
+          <a href="#">Forgot Password?</a>
+        </div>
 
-          {showResponseMessage ? (
-            <MessageStatus type={messageType} />
-          ) : (
-            <button type="submit" className={styles.btn}>
-              Login
-            </button>
-          )}
-          <div className={styles["login-register"]}>
-            <p>
-              Don't have an account?
-              <a href="/Register" className={styles["register-link"]}>
-                Register
-              </a>
-            </p>
-          </div>
-        </form>
-      </div>
+        {showResponseMessage ? (
+          <MessageStatus type={messageType} />
+        ) : (
+          <button type="submit" className={styles.btn}>
+            Login
+          </button>
+        )}
+        <div className={styles["login-register"]}>
+          <p>
+            Don't have an account?
+            <a href="/Register" className={styles["register-link"]}>
+              Register
+            </a>
+          </p>
+        </div>
+      </form>
     </FormContainer>
   );
 }
