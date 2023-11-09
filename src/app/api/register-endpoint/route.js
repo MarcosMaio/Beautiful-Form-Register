@@ -24,12 +24,15 @@ export async function POST(request) {
 
     const hashedPassword = bcrypt.hashSync(password, salt);
 
+    const token = undefined;
+
     await prisma.user.create({
       data: {
         username,
         email,
         password: hashedPassword,
         salt,
+        token,
       },
     });
 
