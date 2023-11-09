@@ -4,7 +4,7 @@ import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./styles/Login.module.css";
 import FormContainer from "../../../components/form-container";
-import MessageStatus from "../../../components/messages-statuns";
+import MessageStatus from "@/components/messages-statuns";
 import { useForm } from "react-hook-form";
 import sendDataToEndpoint from "../../api/api";
 import { useMessage } from "@/context/message-context";
@@ -16,7 +16,11 @@ interface FormData {
   password: string;
 }
 
-export default function LoginForm() {
+interface LoginFormProps {
+  SetIsForgotPassword: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function LoginForm({ SetIsForgotPassword }: LoginFormProps) {
   const { register, handleSubmit } = useForm<FormData>();
   const { message, setMessage, setMessageType, messageType } = useMessage();
   const [showResponseMessage, setShowResponseMessage] = useState(false);
@@ -73,6 +77,10 @@ export default function LoginForm() {
     setHasValueOnPassword(e.target.value);
   };
 
+  const IsVerificationEmail = () => {
+    SetIsForgotPassword(true);
+  };
+
   return (
     <FormContainer title={"Login"}>
       <form onSubmit={handleSubmit(handleSubmitForm)}>
@@ -121,7 +129,9 @@ export default function LoginForm() {
             <input type="checkbox" />
             Remember me
           </label>
-          <a href="#">Forgot Password?</a>
+          <a href="#" onClick={() => IsVerificationEmail()}>
+            Forgot Password?
+          </a>
         </div>
 
         {showResponseMessage ? (
