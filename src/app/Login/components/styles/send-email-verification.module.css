@@ -1,0 +1,50 @@
+.container-info {
+  padding-top: 0.8rem;
+}
+
+.container-info {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #202020;
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid #202020;
+  margin: 30px 0;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: #202020;
+  font-weight: 500;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.input-box input {
+  width: 85%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 0.8em;
+  color: #202020;
+  font-weight: 600;
+  padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+  position: absolute;
+  right: 8px;
+  color: #202020;
+  line-height: 57px;
+}
