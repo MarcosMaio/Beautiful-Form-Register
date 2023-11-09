@@ -3,14 +3,6 @@ import bcrypt from "bcrypt";
 import { NextResponse } from "next/server";
 
 const prisma = new PrismaClient();
-
-// export async function POST(request) {
-//   const body = await request.json()
-
-//   return NextResponse.json(body, {
-//     status: 200,
-//   });
-// }
 export async function POST(request) {
   const { username, email, password } = await request.json();
   console.log("Dados recebidos:", { username, email, password });
