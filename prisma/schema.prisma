@@ -16,4 +16,5 @@ model User {
   email   String   @unique
   password String
   salt     String
+  token String?
 }
