@@ -7,8 +7,16 @@ interface Props {
   children: ReactNode;
   height?: string;
   title: string;
+  textAlign?: string;
+  fontSize?: string
 }
-export default function FormContainer({ children, height, title }: Props) {
+export default function FormContainer({
+  children,
+  height,
+  title,
+  textAlign,
+  fontSize
+}: Props) {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper} style={{ height }}>
@@ -16,7 +24,9 @@ export default function FormContainer({ children, height, title }: Props) {
           <FontAwesomeIcon width={30} height={30} icon={faXmark} />
         </span>
         <div className={styles["form-box"]}>
-          <h2 className={styles["input-title"]}>{title}</h2>
+          <h2 style={{ textAlign , fontSize }} className={styles["input-title"]}>
+            {title}
+          </h2>
           {children}
         </div>
       </div>
