@@ -1,34 +1,65 @@
 "use client";
 
-import React, { useState } from "react";
-import styles from "./styles/send-email-verification.module.css";
+import React, { useEffect, useState } from "react";
+import styles from "../styles/send-email-verification.module.css";
 import FormContainer from "../../../components/form-container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "@/components/button";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { useForm } from "react-hook-form";
 import sendDataToEndpoint from "@/app/api/api";
+import { useDispatch, useSelector } from "react-redux";
 
 interface FormData {
   email: string;
 }
-export default function SendEmailVerification() {
+
+interface Props {
+  isCodeReset: boolean;
+  setIsCodeReset: React.Dispatch<React.SetStateAction<boolean>>;
+}
+export default function SendEmailVerification({
+  isCodeReset,
+  setIsCodeReset,
+}: Props) {
   const { register, handleSubmit } = useForm<FormData>();
   const [hasValueOnEmail, setHasValueOnEmail] = useState("");
 
   const handleSubmitForm = async (data: FormData) => {
-    const url = "/api/forgot-password";
+    const url = "/api/send-reset-password-email";
     const responseData = await sendDataToEndpoint(url, data);
 
     if (responseData) {
       if (responseData.status === 200) {
         console.log("foi enviado");
+
+        setTimeout(
+          async () => {
+            const resetData = data;
+            const resetUrl = "/api/time-limit-reset-password";
+            const resetResponse = await sendDataToEndpoint(resetUrl, resetData);
+            console.log(isCodeReset);
+            if (resetResponse) {
+              if (resetResponse.status === 200) {
+                console.log("Token reset");
+                setIsCodeReset(true);
+              } else if (resetResponse.status === 401) {
+                console.log("Token não excluído");
+              } else {
+                console.log(
+                  "Algum problema ao enviar os dados para resetar o token"
+                );
+              }
+            }
+          },
+          10 * 60 * 9000
+        );
       } else if (responseData.status === 401) {
-        console.log("não foi enviado");
+        console.log("Não foi enviado");
       } else if (responseData.status === 404) {
-        console.log("algum problema");
+        console.log("Algum problema");
       } else {
-        console.log("algum problema ao enviar os dados");
+        console.log("Algum problema ao enviar os dados");
       }
     }
   };
@@ -36,6 +67,10 @@ export default function SendEmailVerification() {
   const handleInputChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setHasValueOnEmail(e.target.value);
   };
+
+  useEffect(() => {
+    console.log("isCodeReset mudou:", isCodeReset);
+  }, [isCodeReset]);
 
   return (
     <FormContainer
