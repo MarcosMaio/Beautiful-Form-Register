@@ -4,14 +4,12 @@ import { NextResponse } from "next/server";
 const prisma = new PrismaClient();
 
 export async function POST(request) {
-  const token = await request.text();
+  const { token } = await request.json();
   console.log("Dados recebidos:", { token });
-
-  const formatToken = token.replace(/['"]+/g, "");
 
   const existingToken = await prisma.user.findFirst({
     where: {
-      OR: [{ token: formatToken }],
+      OR: [{ token: token }],
     },
   });
 
