@@ -1,0 +1,96 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  width: 100%;
+}
+
+.card {
+  background: white;
+  position: relative;
+  border-radius: 3px;
+  padding: 1.25em;
+  width: 100%;
+  max-width: 500px;
+  min-width: 300px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: 250ms ease 50ms;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 12px rgba(23, 26, 28, 0.2);
+  transition: 250ms ease 50ms;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.card-profile {
+  display: flex;
+  align-items: center;
+}
+
+.card-profile__info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card-profile__photo:hover {
+  opacity: 0.84;
+}
+
+.card-profile__photo {
+  width: 70px;
+}
+
+.profile-photo__img {
+  border-radius: 50%;
+  border: 1px solid var(--lightgrey);
+}
+
+.card-profile__info {
+  text-decoration: none;
+  color: inherit;
+  line-height: 1;
+}
+
+.profile-info__name {
+  font-size: 1.1em;
+  font-weight: 700;
+  margin-bottom: 0.2em;
+  color: #202020;
+}
+
+.profile-info__username {
+  font-size: 0.9em;
+  color: #3c3c3c;
+}
+
+.card-message {
+  padding: 1rem 0;
+  color: #202020;
+}
+
+.card-message-stamp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9em;
+  color: #3c3c3c;
+}
+
+.i {
+  font-size: 1rem;
+  font-weight: initial;
+  transition: transform 0.3s;
+  color: #202020;
+}
+
+.i:hover {
+  transform: translateX(0.25rem);
+}
