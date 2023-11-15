@@ -1,0 +1,11 @@
+.container-info {
+  padding-top: 0.8rem;
+}
+
+.container-info {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #202020;
+}
