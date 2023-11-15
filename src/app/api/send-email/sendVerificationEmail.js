@@ -14,7 +14,7 @@ async function sendVerificationEmail(email, code) {
     from: process.env.EMAIL_USER,
     to: email,
     subject: "Reset password",
-    text: `Use token: ${code} to reset your password directly on the website via the link provided below: http://localhost:3000/reset-password?token=${code}`,
+    text: `Use token: ${code} to reset your password directly on the website via the link provided below: http://localhost:3000/reset-password?token=0W61AQ1060E2T4Y7U19&WASZ=PI54ET129FY0&CYDE=${code}&XYZ=458WRTY1CSG7VBG00X`,
   };
 
   try {
