@@ -19,7 +19,10 @@ export async function POST(request) {
 
     if (isPasswordCorrect) {
       console.log("usuario logado");
-      return NextResponse.json({}, { status: 200 });
+      return NextResponse.json(
+        { data: { username: user.username } },
+        { status: 200 }
+      );
     } else {
       console.log("usuario ou senha invalidos");
       return NextResponse.json({}, { status: 401 });
