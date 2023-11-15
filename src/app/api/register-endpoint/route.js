@@ -16,7 +16,7 @@ export async function POST(request) {
   if (existingUser) {
     return NextResponse.json(
       { message: "Email or Username already registered" },
-      { status: 400 }
+      { status: 401 }
     );
   } else {
     const saltRounds = 10;
@@ -38,6 +38,7 @@ export async function POST(request) {
 
     await prisma.$disconnect();
 
-    return NextResponse.json({ message: "User registered successfully" });
+    console.log("Usuario registrado com sucesso");
+    return NextResponse.json({}, { status: 200 });
   }
 }
