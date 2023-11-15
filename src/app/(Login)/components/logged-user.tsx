@@ -68,8 +68,9 @@ export default function LoggedUser() {
             <br />
             <br />
             Thank you once again for testing my application. I hope you enjoyed
-            it. If you would like to learn more about other projects I've worked
-            on, please click the 'arrow' button to explore more about me 👍🏻.
+            it. If you would like to learn more about other projects I&apos;ve
+            worked on, please click the &apos;arrow&apos; button to explore more
+            about me 👍🏻.
             <br />
             <br />
             Sincerely, Marcos Maio

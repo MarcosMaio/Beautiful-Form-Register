@@ -71,7 +71,7 @@ export default function LoginForm({ setRememberUser, rememberUser }: Props) {
         setMessageType("");
       }, 4000);
     }
-  }, [message, messageType]);
+  }, [message, messageType, setMessage, setMessageType]);
 
   const handleInputChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setHasValueOnEmail(e.target.value);
@@ -144,7 +144,7 @@ export default function LoginForm({ setRememberUser, rememberUser }: Props) {
         )}
         <div className={styles["login-register"]}>
           <p>
-            Don't have an account?
+            Don&apos;t have an account?
             <a href="/register-user" className={styles["register-link"]}>
               Register
             </a>
