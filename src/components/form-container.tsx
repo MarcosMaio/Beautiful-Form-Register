@@ -2,13 +2,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { ReactNode } from "react";
 import styles from "../styles/Form-Container.module.css";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import path from "path";
+
+type TextAlign =
+  | "start"
+  | "end"
+  | "left"
+  | "right"
+  | "center"
+  | "justify"
+  | "match-parent";
 
 interface Props {
   children: ReactNode;
   height?: string;
   title: string;
-  textAlign?: string;
+  textAlign?: TextAlign | undefined;
   fontSize?: string;
   path: string;
 }
