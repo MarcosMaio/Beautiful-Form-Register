@@ -1,20 +1,42 @@
-import Link from "next/link";
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import NavItens from "./nav-itens";
 import styles from "../styles/Header.module.css";
+import { useStoredUsername } from "@/context/stored-username-context";
+import Image from "next/image";
 
 export default function Header() {
+  const [loggedUser, setLoggedUser] = useState(false);
+  const { storedUsername } = useStoredUsername();
+  useEffect(() => {
+    if (storedUsername !== null && storedUsername !== "") {
+      setLoggedUser(true);
+    }
+  }, [storedUsername]);
+
+  const handlerLogoutUser = () => {
+    localStorage.removeItem("username");
+    window.location.reload();
+  };
+
   return (
     <div className={styles["header-container"]}>
       <div>
-        <h1>Logo</h1>
+        <a href="/">
+          <Image src={"/assets/logo.svg"} width={80} height={80} alt="Logo" />
+        </a>
       </div>
-
       <div>
         <ul className={styles["nav-container"]}>
-          <NavItens href="/">Home</NavItens>
-          <NavItens href="/Card">About Me</NavItens>
-          <NavItens href="/Login">Login</NavItens>
+          {loggedUser && (
+            <span
+              style={{ cursor: "pointer", color: "#202020", fontWeight: "600" }}
+              onClick={() => handlerLogoutUser()}
+            >
+              Logout
+            </span>
+          )}
         </ul>
       </div>
     </div>
