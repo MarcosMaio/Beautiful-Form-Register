@@ -30,9 +30,9 @@ Bem-vindo ao Beautiful Form Register! Esta aplicação web oferece registro de u
    - Funcionalidade "Esqueci Minha Senha" com envio de e-mail para redefinição.
    - Link seguro de redefinição com token de validação.
 
-5. **Password Recovery:**
-   - "Forgot My Password" functionality with email sending for reset.
-   - Secure reset link with validation token.
+5. **Validações Avançadas:**
+   - Formulários de registro e login com validações rigorosas para senha, e-mail e nome de usuário.
+   - Mensagens de erro e alertas fornecidos ao usuário em caso de entrada inválida.
 
 6. **Contato e Redes Sociais:**
    - Seção "Sobre Mim" com um cartão de contato e links para redes sociais.
