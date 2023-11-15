@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Header from "../components/header";
 import "./globals.css";
 import { MessageProvider } from "@/context/message-context";
+import { StoredUsernameProvider } from "@/context/stored-username-context";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,8 +20,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <MessageProvider>
-          <Header />
-          {children}
+          <StoredUsernameProvider>
+            <Header />
+            {children}
+          </StoredUsernameProvider>
         </MessageProvider>
       </body>
     </html>
