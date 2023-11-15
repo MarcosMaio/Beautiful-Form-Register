@@ -3,8 +3,9 @@ import styles from "../styles/message-status.module.css";
 
 interface Props {
   type: string;
+  message: string;
 }
-const MessageStatus = ({ type }: Props) => {
+const MessageStatus = ({ type, message }: Props) => {
   return (
     <div
       className={
@@ -54,21 +55,17 @@ const MessageStatus = ({ type }: Props) => {
           )}
         </svg>
       </div>
-      <div
+      <p
         className={
           type === "success"
             ? styles.success__title
             : type === "error"
             ? styles.error__title
-            : styles.error__warning
+            : styles.warning__title
         }
       >
-        {type === "success" && "Success Login ..."}
-
-        {type === "error" && "Password invalid. Please, try again."}
-
-        {type === "warning" && "User not found. Please try again."}
-      </div>
+        {message}
+      </p>
     </div>
   );
 };

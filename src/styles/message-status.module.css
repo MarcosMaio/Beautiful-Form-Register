@@ -35,7 +35,7 @@
 
 .success__title {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 12px;
   color: #393a37;
 }
 
@@ -77,7 +77,7 @@
 
 .error__title {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 12px;
   color: #fff;
 }
 
@@ -130,7 +130,7 @@
 
 .warning__title {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 12px;
   color: #393a37;
 }
 
