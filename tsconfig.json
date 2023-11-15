@@ -33,7 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/Card/page.jsx",
+    "src/app/about-me/page.jsx",
     "src/app/(Home)/page.jsx",
     "src/app/Login/page.jsx",
     "src/app/api/register-endpoint/route.js"
