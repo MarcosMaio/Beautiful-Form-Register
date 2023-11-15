@@ -8,8 +8,10 @@
 
 .wrapper {
   position: relative;
-  width: 400px;
   height: 400px;
+  width: 100%;
+  max-width: 400px;
+  min-width: 300px;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
@@ -20,6 +22,7 @@
   align-items: center;
   flex-direction: column;
   overflow: hidden;
+  margin: 0 1em;
 }
 
 .wrapper .icon-close {
@@ -49,4 +52,11 @@
   color: #202020;
   text-align: center;
   font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .form-box {
+    width: 90%;
+    padding: 20px;
+  }
 }

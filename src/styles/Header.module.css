@@ -25,3 +25,9 @@
     transform: translateY(0);
   }
 }
+
+@media (max-width: 600px) {
+  .header-container {
+    padding: 0 0.5rem;
+  }
+}
