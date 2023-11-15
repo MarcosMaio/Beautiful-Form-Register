@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import NavItens from "./nav-itens";
 import styles from "../styles/Header.module.css";
 import { useStoredUsername } from "@/context/stored-username-context";
 import Image from "next/image";
