@@ -1,0 +1,24 @@
+@import url(https://fonts.googleapis.com/css?family=Finger+Paint);
+
+.container {
+  width: 100%;
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.container p {
+  color: #202020;
+  letter-spacing: 1px;
+}
+
+.title {
+  font:
+    7em "Finger Paint",
+    sans-serif;
+  color: #202020;
+}
