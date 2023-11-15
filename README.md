@@ -2,6 +2,16 @@
 
 Bem-vindo ao Beautiful Form Register! Esta aplicação web oferece registro de usuários, login e interações personalizadas. Abaixo, você encontrará detalhes sobre suas principais funcionalidades e as tecnologias utilizadas.
 
+![site illustrato](https://tinypic.host/images/2023/11/15/Capture0944eac890a19dc7.png)
+![site illustrato](https://tinypic.host/images/2023/11/15/codigo-3.png)
+![site illustrato](https://tinypic.host/images/2023/11/15/codigo-4.png)
+
+![site illustrato](https://tinypic.host/images/2023/11/15/codigo-6.png)
+![site illustrato](https://tinypic.host/images/2023/11/15/codigo-8.png)
+![site illustrato](https://tinypic.host/images/2023/11/15/codigo-9.png)
+![site illustrato](https://tinypic.host/images/2023/11/15/codigo-10.png)
+![site illustrato](https://tinypic.host/images/2023/11/15/codigo-11.png)
+
 ## Funcionalidades
 
 1. **Cadastro e Login:**
