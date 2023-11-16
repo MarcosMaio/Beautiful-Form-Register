@@ -22,7 +22,7 @@
   align-items: center;
   flex-direction: column;
   overflow: hidden;
-  margin: 0 1em;
+  margin: 0 3em;
 }
 
 .wrapper .icon-close {
@@ -54,9 +54,13 @@
   font-weight: 600;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   .form-box {
     width: 90%;
     padding: 20px;
+  }
+
+  .container {
+    height: 80vh;
   }
 }

@@ -94,3 +94,10 @@
 .i:hover {
   transform: translateX(0.25rem);
 }
+
+
+@media (max-width: 500px) { 
+  .wrapper {
+    height: 80vh;
+  }
+}
